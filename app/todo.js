@@ -1,5 +1,6 @@
 'use client'
 
+import axios from 'axios';
 import { useRouter } from 'next/navigation';
 // function update 
 
@@ -10,8 +11,7 @@ export async function update(_id, isCompleted, refresh) {
     await fetch(`https://todo-server-smoky.vercel.app/todos/${_id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
-        mode: 'no-cors',
+        body: JSON.stringify(data)
     }).then(response => {
         return response.json();
     }).then(data => {
@@ -23,12 +23,11 @@ export async function update(_id, isCompleted, refresh) {
 }
 
 export async function todoDelete(_id, refresh) {
-    console.log('Delete', _id);
+    // console.log('Delete', _id);
     // axios delete request
-    
+   
     await fetch(`https://todo-server-smoky.vercel.app/todos/${_id}`, {
-        method: 'DELETE',
-        mode: 'no-cors',
+        method: 'DELETE'
     }).then(response => {
         return response.json();
     }).then(data => {
