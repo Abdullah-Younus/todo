@@ -2,8 +2,10 @@
 
 import React from 'react'
 import Input from '@/components/Input';
-const FormTodo = () => {
+import { useRouter } from "next/navigation";
 
+const FormTodo = () => {
+    const router = useRouter();
     async function handleSubmit(e) {
         e.preventDefault();
         const formData = new FormData(e.target);
@@ -20,7 +22,9 @@ const FormTodo = () => {
         });
         const data = await res.json();
         console.log(data);
+        router.refresh();
         e.target.reset();
+        router.push('/todolist');
     }
 
 
