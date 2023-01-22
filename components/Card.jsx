@@ -11,9 +11,6 @@ const Card = ({ tododata }) => {
         const data = await res.json();
         // const deleteTodo = await res.json();
         console.log(data);
-
-
-
         router.refresh();
     }
     return tododata.map((tlist) => (

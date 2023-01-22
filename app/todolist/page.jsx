@@ -19,7 +19,7 @@ export default async function TodoLists() {
     return (
         <div className="p-4 text-slate-100 space-y-4">
             <h1 className="text-xl">Todo Lists</h1>
-            <div className="grid grid-cols-1 space-y-4 md:grid-cols-2 lg:grid-cols-4">
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
                <Card tododata={tododata}/>
             </div>
         </div>
