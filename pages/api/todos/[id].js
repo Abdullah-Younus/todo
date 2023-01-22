@@ -8,7 +8,7 @@ export default async function handler(req, res) {
     if (req.method === "DELETE") {
         await prisma.todo.delete({
             where: {
-                id: parseInt(id)
+                id: +id
             }
         });
         res.status(200).json({ message: "Todo deleted" });
