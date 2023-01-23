@@ -9,22 +9,30 @@ const FormTodo = () => {
     async function handleSubmit(e) {
         e.preventDefault();
         const formData = new FormData(e.target);
-        const res = await fetch("/api/todos", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                todo: formData.get("todo"),
-                date: formData.get("date"),
-                time: formData.get("time")
-            }),
-        });
-        const data = await res.json();
-        console.log(data);
-        router.refresh();
-        e.target.reset();
-        router.push('/todolist');
+        try {
+            const res = await fetch("/api/todos", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    todo: formData.get("todo"),
+                    date: formData.get("date"),
+                    time: formData.get("time")
+                }),
+            });
+            // console.log('Res', res);
+            if (res.status === 200) {
+                const data = await res.json();
+                console.log('IF Statment', data);
+                e.target.reset();
+                router.refresh();
+                router.push('/todolist');
+            }
+        } catch (error) {
+            console.log('Catch', error);
+        }
+
     }
 
 
