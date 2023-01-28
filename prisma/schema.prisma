@@ -3,7 +3,7 @@
 
 datasource db {
   provider     = "mysql"
-  url          = env("DATABASE_URL")
+  url          = "mysql://0y834zk3zjz3x10s20ud:pscale_pw_XAchaIEbLuPY1qzUrFOSrFAe8wRrezGZSzYHjDaEcgG@ap-southeast.connect.psdb.cloud/test?sslaccept=strict"
   relationMode = "prisma"
 }
 
