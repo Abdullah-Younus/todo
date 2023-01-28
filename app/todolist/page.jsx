@@ -16,8 +16,8 @@ export default async function TodoLists() {
     )
 }
 
-async function getTodoLists() {
-    const data = await prisma.todo.findMany({
+function getTodoLists() {
+    const data = prisma.todo.findMany({
         select: {
             id: true,
             todo: true,
