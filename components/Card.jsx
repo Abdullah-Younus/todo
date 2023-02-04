@@ -4,7 +4,6 @@ import { useRouter } from 'next/navigation';
 
 
 const Card = ({ tododata }) => {
-
     const router = useRouter();
     async function delTodo(id) {
         console.log('id :>> ', id);
